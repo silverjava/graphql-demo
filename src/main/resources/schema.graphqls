@@ -31,12 +31,6 @@ type Comment {
     body: String
 }
 
-
-input DashBoardInput {
-    techName: String!,
-    date: String
-}
-
 type Dashboard {
     name: String,
     date: String,
