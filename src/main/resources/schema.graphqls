@@ -1,0 +1,60 @@
+type Query {
+    todos: [Todo],
+    todo(id: Int): Todo,
+    posts: [Post],
+    post(id: Int): Post,
+
+    dashboard(name: String, date: String): Dashboard
+}
+
+type Todo {
+    userId: Int!,
+    id: ID!,
+    title: String!,
+    completed: Boolean!
+}
+
+type Post {
+    id: ID!,
+    userId: Int!,
+    title: String,
+    body: String,
+    sum: Int,
+    comments: [Comment],
+}
+
+type Comment {
+    id: ID!,
+    postId: Int!,
+    name: String!,
+    email: String!,
+    body: String
+}
+
+
+input DashBoardInput {
+    techName: String!,
+    date: String
+}
+
+type Dashboard {
+    name: String,
+    date: String,
+    kpi: [Kpi],
+    nextAssignments: [Assignment]
+}
+
+type Assignment {
+    name: String,
+    date: String,
+    job: Job
+}
+
+type Kpi {
+    key: String,
+    value: Float
+}
+
+type Job {
+    name: String
+}

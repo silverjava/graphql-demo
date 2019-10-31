@@ -1,0 +1,21 @@
+server:
+  port: 3000
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+# foo.ribbon.listOfServers: localhost:9000
+
+posts:
+  ribbon:
+    listOfServers:
+      http://jsonplaceholder.typicode.com
+
+comments:
+  ribbon:
+    listOfServers:
+      http://jsonplaceholder.typicode.com
